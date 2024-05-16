@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="辉盾智防">
+    <meta name="description" content="辉盾智防" />
+    <title>辉盾智防|关于我们</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/public.js"></script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/contentUs.css">
+
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=3.0&ak=51LShxrwwjelXSPvjpuDnPWm9aLyLKAS"></script>
+    <link href='http://cdn.webfont.youziku.com/webfonts/nomal/106291/44802/5acf09d8f629d9096889bd78.css' rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+<div class="header">
+    <div class="containr">
+        <img src="../image/logo2.png" class="logo">
+        <div class="navbar">
+            <div class="navbar-item">
+                <a href="../index.html">首页</a>
+            </div>
+            <div class="navbar-item">
+                <a href="business.html">产品和解决方案</a>
+            </div>
+            <div class="navbar-item">
+                <a href="case.html">客户案例</a>
+<!--            <div class="navbar-child">
+                </div> -->
+            </div>
+            <div class="navbar-item">
+                <a href="news.html">媒体平台</a>
+            </div>
+            <div class="navbar-item">
+                <a href="recruit.html">招贤纳士</a>
+            </div>
+            <div class="navbar-item">
+                <a href="#" class="active">关于我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="progress"></div>
+</div>
+
+<div class="banner">
+    <div class="containr">
+        <h1 class="title">
+            <div class="ch">关于我们</div>
+        </h1>
+        <div class="des">
+            辉盾智防的创业管理团队
+			<br>由华北理工大学实践经验丰富、理论掌握牢固、责任心强的老师和学生组成的。
+			<br>是一个有着强烈责任感、充满激情、勇于创新、团结敬业、各有所长的智慧型高素质领导团队。
+			<br>本项目的顾问团队中更是集结了材料领域和商业领域中的精英人物，他们为我们团队的发展提供了最强有力的支持。
+        </div>
+    </div>
+</div>
+<div class="team">
+    <div class="containr">
+      <div class="team-title">
+        专业的团队
+      </div> 
+      <div class="team-group clearfloat">
+        <li class="team-item">
+            <div class="team-item-icon team-item-icon-1"></div>
+            <div class="team-item-title">业务专家</div>
+            <div class="team-item-dec">
+              从事防伪行业<br>十年以上
+            </div>
+        </li>
+
+        <li class="team-item">
+            <div class="team-item-icon team-item-icon-2"></div>
+            <div class="team-item-title">数据专家</div>
+            <div class="team-item-dec">
+              熟悉数据分析<br>应用和建模专家
+            </div>
+        </li>
+
+        <li class="team-item">
+            <div class="team-item-icon team-item-icon-3"></div>
+            <div class="team-item-title">技术专家</div>
+            <div class="team-item-dec">
+              组织和参与多项<br>平台级开发
+            </div>
+        </li>
+
+        <li class="team-item">
+            <div class="team-item-icon team-item-icon-4"></div>
+            <div class="team-item-title">交付专家</div>
+            <div class="team-item-dec">
+              完成多项<br>应用系统交付
+            </div>
+        </li>
+      </div>
+    </div>
+</div>
+<div class="inset-containr">
+    <div class="us-customer">
+        <div class="containr">
+             <div class="us-customer-title">
+                我们的客户
+            </div>
+            <div class="us-customer-logo">
+                <img src="../image/us-customer.png" alt="">
+            </div>
+        </div>
+    </div>
+   <div class="containr" id="names">
+   
+        <div id="map"></div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="containr">
+        <div class="footer-text">
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">联系方式</div>
+                <li class="footer-list-item">电话：19831903368</li>
+                <li class="footer-list-item">传真：19831903368</li>
+                <li class="footer-list-item">邮箱：2081989051@qq.com</li>
+            </ul>
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">地址</div>
+                <li class="footer-list-item">河北省唐山市华北理工大学</li>
+            </ul>
+        </div>
+        <div class="code fr">
+            <div class="wechatCode fl">
+
+                <div class="codeIcon fl">
+                    <div class="iconfont icon-weixin"></div>
+                </div>
+                <div class="codeImg fl">
+                    <img src="../image/wechat.png" alt="">
+                    <div class="codeDes" style="font-size: 12px">扫描二维码关注</div>
+                </div>
+            </div>
+            <!--<div class="wechatCode fl">
+                <div class="codeIcon fl">
+                    <a href=""><div class="iconfont icon-weibo"></div></a>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <div class="copyright">
+        Copyright © 2024 辉盾智防 |  京ICP备18023351号-1
+	</div>
+</div>
+<script>
+    $(function () {
+        $.ajax({
+          url:'http://172.27.11.156:8080/bfm-admin/system/findAllByUserName',
+            type:'post',
+
+        })
+    })
+</script>
+<script type="text/javascript">
+     $(".rwfind").click(function (e) {
+         console.log(e)
+       $(".slide-info").animate({
+           'left':0
+       },400)
+     });
+    function closeArea() {
+        $(".slide-info").animate({
+            'left':'-100%'
+        },400)
+    }
+    var map = new BMap.Map("map");
+    // 创建地图实例
+    var point = new BMap.Point(118.592765, 39.204895);
+    // 创建点坐标
+    map.centerAndZoom(point, 20);
+    var marker = new BMap.Marker(point);        // 创建标注
+    map.addOverlay(marker);
+    var opts = {
+        width: 250,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title: "公司地址"  // 信息窗口标题
+    };
+    var infoWindow = new BMap.InfoWindow("<p style='margin-top: 10px'>公司地址:唐山市华北理工大学</p><p style='margin-top: 10px'>联系电话:010-62956987</p>", opts);  // 创建信息窗口对象
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow, map.getCenter());
+    });
+
+</script>
+</body>
+</html>

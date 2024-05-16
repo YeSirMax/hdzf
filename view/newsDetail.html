@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="辉盾智防">
+    <meta name="description" content="辉盾智防" />
+    <title>辉盾智防NEWS</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/work.js"></script>
+    <style>
+        #cons {
+            width: 1000px;
+            text-align: left;
+
+        }
+        #cons p{
+            color: white;
+            font-size:16px;
+            line-height:30px;
+            margin-top: 10px;
+
+        }
+        #cons h1{
+            font-size:20px;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #cons img{
+            width: 100%;
+            display: block;
+            margin: 20px auto;
+
+        }
+        #titles{
+            margin-top: 100px;
+            text-align: center;
+            font-size:26px;
+            color: white;
+        }
+        #cons{
+             padding-top: 0;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../js/config.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="containr">
+        <img src="../image/logo2.png" class="logo">
+        <div class="navbar">
+            <div class="navbar-item">
+                <a href="../index.html">首页</a>
+            </div>
+            <div class="navbar-item">
+                <a href="business.html">产品和解决方案</a>
+            </div>
+            <div class="navbar-item">
+                <a >客户案例</a>
+                <div class="navbar-child">
+
+                </div>
+            </div>
+            <div class="navbar-item">
+                <a href="news.html" class="active">媒体平台</a>
+            </div>
+            <div class="navbar-item">
+                <a href="recruit.html">招贤纳士</a>
+            </div>
+            <div class="navbar-item">
+                <a href="contantus.html">联系我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="progress"></div>
+</div>
+
+<div class="banner">
+    <div class="containr">
+        <h1 class="title">
+            <div class="ch">新闻详情</div>
+            <div class="en">NEWS</div>
+        </h1>
+        <div class="des">
+            范式融通<br>大事件
+        </div>
+
+    </div>
+</div>
+<div class="news-list">
+     <p id="titles"></p>
+    <div class="containr" id="cons">
+
+    </div>
+</div>
+<div class="footer">
+    <div class="containr">
+        <div class="footer-text">
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">联系方式</div>
+                <li class="footer-list-item">电话：19831903368</li>
+                <li class="footer-list-item">传真：19831903368</li>
+                <li class="footer-list-item">邮箱：2081989051@qq.com</li>
+            </ul>
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">地址</div>
+                <li class="footer-list-item">河北省唐山市华北理工大学</li>
+            </ul>
+        </div>
+        <div class="code fr">
+            <div class="wechatCode fl">
+
+                <div class="codeIcon fl">
+                    <div class="iconfont icon-weixin"></div>
+                </div>
+                <div class="codeImg fl">
+                    <img src="../image/wechat.png" alt="">
+                    <div class="codeDes" style="font-size: 12px">扫描二维码关注</div>
+                </div>
+            </div>
+            <!--<div class="wechatCode fl">
+                <div class="codeIcon fl">
+                    <a href=""><div class="iconfont icon-weibo"></div></a>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <div class="copyright">
+        Copyright © 2024 辉盾智防 |  京ICP备18023351号-1
+	</div>
+</div>
+<link href='http://cdn.webfont.youziku.com/webfonts/nomal/106291/44802/5acf09d8f629d9096889bd78.css' rel='stylesheet'
+      type='text/css'/>
+<link href='http://cdn.webfont.youziku.com/webfonts/nomal/106291/46899/5ad36e84f629d800b0310257.css' rel='stylesheet'
+      type='text/css'/>
+<script>
+
+    getList();
+    function getList() {
+        $.ajax({
+            type: 'post',
+            url: api + 'mess/findByidMess',
+            data: {
+               id:Workbridage.getURLParams('id')
+            },
+            success:function (res) {
+                 $("#cons").html(res.list.info);
+                 $("#titles").html(res.list.title)
+            }
+        })
+    }
+</script>
+</body>
+</html>

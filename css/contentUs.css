@@ -1,0 +1,112 @@
+html{
+    font-size:10px;
+}
+body{
+    background: whitesmoke;
+}
+.header{
+    background-color: transparent;
+    position: absolute;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: visible;
+}
+.banner{
+    height: 700px;
+    text-align: center;
+    background-image: url(../image/content-banner-bg.jpg);
+}
+.banner .des{
+    width: 100%;
+}
+
+.team{
+    background-color: #fff;
+}
+.team-title{
+    padding-top: 70px;
+}
+.team-group{
+    margin-left: -13.3333333px;
+    margin-right: -13.3333333px;
+}
+.team-item{
+    width: 280px;
+    float: left;
+    background-color: #fafafa;
+    text-align: center;
+    margin-left: 13.3333px;
+    margin-right: 13.3333px;
+    border-bottom: 25px solid #a6e8e9;
+}
+.team-item-title{
+    padding-top: 40px;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+.team-item-title:after{
+    display: block;
+    content: '';
+    width: 54px;
+    height: 11px;
+    margin: 0 auto;
+    margin-top: 24px;
+    background-image: url(../image/team-fenge.png);
+}
+.team-item-dec{
+    font-size: 20px;
+    color: #444;
+    line-height: 50px;
+    margin-bottom: 55px;
+}
+.team-item-icon{
+    width: 82px;
+    height: 82px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.team-item-icon-1{
+    background-image: url(../image/team-icon-1.png);
+}
+.team-item-icon-2{
+    background-image: url(../image/team-icon-2.png);
+}
+.team-item-icon-3{
+    background-image: url(../image/team-icon-3.png);
+}
+.team-item-icon-4{
+    background-image: url(../image/team-icon-4.png);
+}
+
+.us-customer .us-customer-title,.team-title{
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+.us-customer .us-customer-title:after,.team-title:after{
+    display: block;
+    content: '';
+    width: 60px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 2px solid #00a5a7;
+}
+#map{
+    height: 500px;
+    width: 98%;
+    border: 10px solid #e7f4f4;
+    margin-bottom: 40px;
+}
+.us-customer{
+    padding-top: 80px;
+    background-color: #fff;
+    padding-bottom: 60px;
+}
+
+.us-customer-logo{
+    width: 850px;
+    margin: 0 auto;
+}

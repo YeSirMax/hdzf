@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辉盾智防|NEWS</title>
+    <meta name="Keywords" content="辉盾智防">
+    <meta name="description" content="辉盾智防" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/work.js"></script>
+    <script src="../js/config.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="containr">
+        <img src="../image/logo2.png" class="logo">
+        <div class="navbar">
+            <div class="navbar-item">
+                <a href="../index.html">首页</a>
+            </div>
+            <div class="navbar-item">
+                <a href="business.html">产品和解决方案</a>
+            </div>
+            <div class="navbar-item">
+                <a href="case.html">客户案例</a>
+<!--            <div class="navbar-child">
+                </div> -->
+            </div>
+            <div class="navbar-item">
+                <a href="" class="active">媒体平台</a>
+            </div>
+            <div class="navbar-item">
+                <a href="recruit.html">招贤纳士</a>
+            </div>
+            <div class="navbar-item">
+                <a href="contantus.html">关于我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="progress"></div>
+</div>
+
+
+
+<div class="banner">
+    <div class="containr">
+        <h1 class="title">
+            <div class="ch">媒体平台</div>
+            <div class="en">NEWS</div>
+        </h1>
+        <div class="des">
+        </div>
+    </div>
+
+</div>
+<div class="news-list">
+    <div class="containr" id="cons">
+
+    </div>
+    <div class="more-group">
+        <span id="newListMore" class="more" >MORE</span>
+    </div>
+</div>
+<div class="footer">
+    <div class="containr">
+        <div class="footer-text">
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">联系方式</div>
+                <li class="footer-list-item">电话：19831903368</li>
+                <li class="footer-list-item">传真：19831903368</li>
+                <li class="footer-list-item">邮箱：2081989051@qq.com</li>
+            </ul>
+            <ul class="footer-list fl">
+                <div class="footer-list-tit">地址</div>
+                <li class="footer-list-item">河北省唐山市华北理工大学</li>
+            </ul>
+        </div>
+        <div class="code fr">
+            <div class="wechatCode fl">
+
+                <div class="codeIcon fl">
+                    <div class="iconfont icon-weixin"></div>
+                </div>
+                <div class="codeImg fl">
+                    <img src="../image/wechat.png" alt="">
+                    <div class="codeDes" style="font-size: 12px">扫描二维码关注</div>
+                </div>
+            </div>
+            <!--<div class="wechatCode fl">
+                <div class="codeIcon fl">
+                    <a href=""><div class="iconfont icon-weibo"></div></a>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <div class="copyright">
+        Copyright © 2024 辉盾智防 |  京ICP备18023351号-1
+	</div>
+</div>
+<link href='http://cdn.webfont.youziku.com/webfonts/nomal/106291/44802/5acf09d8f629d9096889bd78.css' rel='stylesheet'
+      type='text/css'/>
+<link href='http://cdn.webfont.youziku.com/webfonts/nomal/106291/46899/5ad36e84f629d800b0310257.css' rel='stylesheet'
+      type='text/css'/>
+<script>
+    var pageNum = 1;
+    var pageSize = 5;
+    jQuery.support.cors = true;
+    function computedBorder() {
+        $(".ano").each(function (i) {
+            if (i % 2 === 1) {
+                $('.ano').eq(i).css('margin-left', '4%');
+            }
+        })
+        $(".newsBig").each(function (i) {
+            if (i % 2 === 1) {
+                $(".newsBig").eq(i).children('.father').css('right', 0);
+                $(".newsBig").eq(i).children('.newsListContainr').css('float', 'left');
+                $(".newsBig").eq(i).children('.newsListContainr').children('a').children('.news-title').css('margin-left', '40px');
+                $(".newsBig").eq(i).children('.newsListContainr').children('a').children('.news-detial').css({
+                    'margin-left': '40px',
+                    'margin-right': '120px'
+                });
+                $(".newsBig").eq(i).children('.newsListContainr').children('a').children('.news-times').css('margin-left', '40px');
+            }
+        })
+    }
+    getList()
+    function getList() {
+        $.ajax({
+            type: 'post',
+            url: api + 'mess/findMessagesByPage',
+            data: {
+                pageNum: pageNum,
+                pageSize: pageSize
+            },
+            success:function (res) {
+                if(res.pageList.length !== 0){
+                    var str = $('#cons').html();
+                    str += results(res.pageList,0,'');
+                    $("#cons").html(str);
+                    computedBorder();
+                }else {
+                    $('#newListMore').html('感谢您对范式融通的关注')
+                    $('#newListMore').unbind();
+                }
+            }
+        })
+    }
+    function results(list, num, result) {
+        if (num < list.length) {
+            if (num % 5 === 0) {
+                result += "<div class=\"news-list-item newsBig\">\n                        <div class=\"father\">\n                            <div class=\"news-imgs\">\n                                <img src=\"" + list[num].src + "\" alt=\"\">\n                            </div>\n                        </div>\n                        <div class=\"newsListContainr\">\n                            <a href=\"newsDetail.html?id=" + list[num]._id + "\">\n                                <div class=\"news-title first\">\n                                      " + list[num].title + "\n                                </div>\n                                <p class=\"news-detial\">\n                                   " + list[num].smallInfo + "\n                                </p>\n                                <p class=\"news-times\">\u4E0A\u4F20\u65F6\u95F4:" + Workbridage.timeALL({ timestamp: list[num].time / 1000 }) + "</p>\n                            </a>\n\n                        </div> </div>";
+            } else {
+                result += "<div class=\"news-list-item ano\">\n                        <div class=\"time\">\n                            <p class=\"timeBig\">" + Workbridage.timeArr({ timestamp: list[num].time / 1000 })[1] + "." + Workbridage.timeArr({ timestamp: list[num].time / 1000 })[2] + "</p>\n                            <p class=\"timesmall\">" + Workbridage.timeArr({ timestamp: list[num].time / 1000 })[0] + "</p>\n                        </div>\n                        <div class=\"right\">\n                            <a href=\"newsDetail.html?id=" + list[num]._id + "\">\n                                <div class=\"news-title\">\n                                   " + list[num].title + "\n                                </div>\n                                <div class=\"news-details\">\n                                    " + list[num].smallInfo + "\n                                </div>\n                            </a>\n                        </div>\n                    </div>";
+            }
+            num++;
+            return results(list, num, result);
+        } else {
+            return result;
+        }
+    }
+    
+    $('#newListMore').click(function () {
+        pageNum++;
+        getList();
+    })
+
+</script>
+</body>
+</html>

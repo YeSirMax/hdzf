@@ -1,0 +1,134 @@
+body{
+    background-color: #ddd;
+}
+.header{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 90px;
+    z-index: 999;
+    overflow: visible;
+}
+.banner{
+    height: 700px;
+}
+.banner .des{
+    width: 100%;
+    padding-left: 40px;
+}
+.recruit .nav{
+    position: relative;
+    z-index: 10;
+    color: #f9f9f9;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.recruit .nav li{
+    position: relative;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 4em;
+}
+.recruit .nav li:after{
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 40px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    border-bottom: 4px solid #fff;
+    bottom: 10px;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+.recruit .nav li:hover,.recruit .nav li.active{
+    background-color: rgba(0,0,0,0.6);
+}
+.recruit .nav li:hover:after,.recruit .nav li.active:after{
+    opacity: 1;
+}
+.recruit-group {
+    position: relative;
+    z-index: 5;
+    padding: 100px 0;
+}
+.recruit-group .menu{
+    width: 30%;
+    font-size: 20px;
+}
+.recruit-group .menu li{
+    padding: 20px 30px;
+    text-align: center;
+}
+.recruit-group .menu li a{
+    position: relative;
+    color: #666666;
+}
+.recruit-group .menu li a:before,.recruit-group .menu li a:after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-color: #222;
+    border-style: solid;
+    border-width: 0px;
+    opacity: 0;
+    transition: all .5s ease;
+    top: 20px;
+    left: 40px;
+}
+.recruit-group .menu li:hover a{
+    color: #111;
+}
+.recruit-group .menu li a.active{
+    color: #111 !important;
+}
+.recruit-group .menu li:hover a:before,.recruit-group .menu li:hover a:after,.recruit-group .menu li a.active:before,.recruit-group .menu li a.active:after{
+    opacity: 1;
+}
+.recruit-group .menu li:hover a:before,.recruit-group .menu li a.active:before{
+    border-top-width:4px;
+    border-left-width:4px;
+    top: -10px;
+    left: -20px;
+}
+.recruit-group .menu li:hover a:after,.recruit-group .menu li a.active:after{
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+    left: auto;
+    top: auto;
+    right: -20px;
+    bottom: -10px;
+}
+.recruit-group .recruit-tab{
+    width: 70%;
+}
+.recruit-item{
+    margin-bottom: 20px;
+}
+.recruit-item h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.recruit-item p{
+    line-height: 30px;
+    color: #666666;
+}
+.recruit-btn{
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 10px 0;
+    color: #222222;
+    border: 2px solid #222222;
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+.recruit-btn:hover{
+    opacity: .6;
+}

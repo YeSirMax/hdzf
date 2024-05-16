@@ -1,0 +1,65 @@
+.header{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 90px;
+    z-index: 999;
+    overflow: visible;
+}
+.banner{
+    height: 700px;
+    text-align: center;
+}
+.banner .des{
+    width: 100%;
+}
+.resume{
+    padding: 60px 0;
+}
+.resume-item{
+    margin-bottom: 60px;
+}
+.resume-item h2{
+    font-size: 20px;
+    color: #333333;
+    padding: 20px 40px 20px;
+    background-color: #eee;
+    border-left: 4px solid #222222;
+    margin-bottom: 40px;
+}
+.input-item{
+    line-height: 30px;
+    width: 50%;
+    float: left;
+    margin-bottom: 10px;
+}
+.input-item label{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+.input-item input{
+    display: inline-block;
+    border: 1px solid #aaa;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+.input-item.disabled input{
+    background-color: #fafafa;
+}
+.input-item input.file{
+    border:none;
+    display: none;
+}
+.fileBtn{
+    background-color: #fff;
+    border: 2px solid #ddd;
+    font-size: 16px;
+    padding: 10px 30px;
+}
+.fileBtn:hover{
+    background-color: #eee;
+}

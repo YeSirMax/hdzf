@@ -1,0 +1,1 @@
+var api = 'http://www.paradigmrt.com:8081/';
